@@ -71,8 +71,16 @@
       var card = track.querySelector(':scope > *');
       return card ? card.getBoundingClientRect().width + 16 : track.clientWidth;
     }
-    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
-    if (next) next.addEventListener('click', function () { track.scrollBy({ left: cardWidth(), behavior: 'smooth' }); });
+    function atStart() { return track.scrollLeft <= 1; }
+    function atEnd() { return track.scrollLeft + track.clientWidth >= track.scrollWidth - 1; }
+    if (prev) prev.addEventListener('click', function () {
+      if (atStart()) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      else track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    });
+    if (next) next.addEventListener('click', function () {
+      if (atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
   });
 
   /* Typeform embed: load only when the visitor opts in (facade pattern avoids
