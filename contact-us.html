@@ -21,13 +21,9 @@
     <meta name="twitter:image" content="https://ictraining.us/images/contact-us/contact-us-banner-img.webp">
 
     <link rel="icon" href="./images/home/footer-logo.webp" type="image/webp">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/syne.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/contact-us/contact-us-banner-img.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
     {
@@ -70,154 +66,98 @@
     </script>
 </head>
 <body>
-    <div class="skeleton-loader" id="skeleton-loader">
-        <div class="skeleton-nav">
-            <div class="skeleton-block skeleton-logo"></div>
-            <div class="skeleton-nav-links">
-                <div class="skeleton-block skeleton-nav-link"></div>
-                <div class="skeleton-block skeleton-nav-link"></div>
-                <div class="skeleton-block skeleton-nav-link"></div>
-                <div class="skeleton-block skeleton-nav-link"></div>
-            </div>
-        </div>
-        <div class="skeleton-hero">
-            <div class="skeleton-hero-text">
-                <div class="skeleton-block skeleton-heading-line skeleton-w-90"></div>
-                <div class="skeleton-block skeleton-heading-line skeleton-w-75"></div>
-                <div class="skeleton-block skeleton-line skeleton-w-100"></div>
-                <div class="skeleton-block skeleton-line skeleton-w-90"></div>
-                <div class="skeleton-block skeleton-line skeleton-w-60"></div>
-                <div class="skeleton-block skeleton-button"></div>
-            </div>
-            <div class="skeleton-block skeleton-hero-image"></div>
-        </div>
-    </div>
-    <script>
-    (function () {
-        var el = document.getElementById('skeleton-loader');
-        if (!el) return;
-        var shown = false;
-        var showTimer = setTimeout(function () {
-            shown = true;
-            el.classList.add('is-visible');
-            document.body.style.overflow = 'hidden';
-        }, 200);
-        function hide() {
-            clearTimeout(showTimer);
-            if (shown) {
-                el.style.opacity = '0';
-                document.body.style.overflow = '';
-                setTimeout(function () { el.style.display = 'none'; }, 250);
-            } else {
-                el.style.display = 'none';
-            }
-        }
-        window.addEventListener('load', hide);
-        setTimeout(hide, 4000);
-    })();
-    </script>
-    <section class="about-us-nav-banner">
-        <div class="home-banner-bg">
-            <nav class="navbar navbar-expand-lg bg-transparent">
-                <div class="container">
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="images/home/footer-logo.webp" loading="lazy" alt="Logo" width="120">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active-link" href="./index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./our-brands.html">Our Brands</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./contact-us.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" focusable="false">
+        <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+        <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/></symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.03 0-2.34 1.58-2.34 3.22V21h-4V9z"/></symbol>
+        <symbol id="icon-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.35C16.06 4.3 14.9 4.2 13.56 4.2c-2.78 0-4.68 1.7-4.68 4.8v2.5H6.4v3h2.48V21h4.62z"/></symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c2.7 0 3 .01 4.12.06 1.11.05 1.87.23 2.53.48.7.27 1.29.63 1.87 1.21.58.58.94 1.17 1.21 1.87.25.66.43 1.42.48 2.53.05 1.12.06 1.42.06 4.12s-.01 3-.06 4.12c-.05 1.11-.23 1.87-.48 2.53-.27.7-.63 1.29-1.21 1.87-.58.58-1.17.94-1.87 1.21-.66.25-1.42.43-2.53.48-1.12.05-1.42.06-4.12.06s-3-.01-4.12-.06c-1.11-.05-1.87-.23-2.53-.48-.7-.27-1.29-.63-1.87-1.21-.58-.58-.94-1.17-1.21-1.87-.25-.66-.43-1.42-.48-2.53C2.21 15 2.2 14.7 2.2 12s.01-3 .06-4.12c.05-1.11.23-1.87.48-2.53.27-.7.63-1.29 1.21-1.87.58-.58 1.17-.94 1.87-1.21.66-.25 1.42-.43 2.53-.48C9 2.21 9.3 2.2 12 2.2zm0 1.8c-2.65 0-2.96.01-4.01.06-.96.04-1.48.2-1.83.34-.46.18-.79.39-1.13.74-.35.34-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.05 1.05-.06 1.36-.06 4.01s.01 2.96.06 4.01c.04.96.2 1.48.34 1.83.18.46.39.79.74 1.13.34.35.67.56 1.13.74.35.14.87.3 1.83.34 1.05.05 1.36.06 4.01.06s2.96-.01 4.01-.06c.96-.04 1.48-.2 1.83-.34.46-.18.79-.39 1.13-.74.35-.34.56-.67.74-1.13.14-.35.3-.87.34-1.83.05-1.05.06-1.36.06-4.01s-.01-2.96-.06-4.01c-.04-.96-.2-1.48-.34-1.83a3.03 3.03 0 0 0-.74-1.13 3.03 3.03 0 0 0-1.13-.74c-.35-.14-.87-.3-1.83-.34-1.05-.05-1.36-.06-4.01-.06zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28zm5.13-1.99a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 10.6L20.4 3h-1.6l-5.9 6.6L8.2 3H3l7.1 9.9L3 21h1.6l6.2-7 5 7H21l-7.4-10.4zm-2.2 2.5l-.7-1L5 4.3h2.5l4.6 6.4.7 1 6 8.3h-2.5l-4.9-6.9z"/></symbol>
+        <symbol id="icon-pinterest" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c-5.5 0-9.8 4-9.8 9.1 0 3.9 2.3 7.2 5.7 8.5-.08-.7-.15-1.8.03-2.6.16-.7 1.05-4.5 1.05-4.5s-.27-.55-.27-1.35c0-1.27.73-2.22 1.65-2.22.78 0 1.15.58 1.15 1.28 0 .78-.5 1.94-.75 3.02-.22.9.45 1.64 1.34 1.64 1.6 0 2.83-1.7 2.83-4.13 0-2.16-1.55-3.67-3.77-3.67-2.56 0-4.07 1.93-4.07 3.92 0 .78.3 1.6.67 2.06.07.09.08.17.06.26l-.25 1c-.04.16-.13.2-.3.12-1.1-.51-1.78-2.13-1.78-3.42 0-2.78 2.02-5.34 5.82-5.34 3.06 0 5.43 2.18 5.43 5.09 0 3.04-1.91 5.48-4.57 5.48-.89 0-1.73-.47-2.02-1.02l-.55 2.1c-.2.77-.74 1.72-1.1 2.31.83.26 1.71.4 2.62.4 5.5 0 9.8-4.03 9.8-9.13S17.5 2.2 12 2.2z"/></symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2s-.21-1.5-.86-2.16c-.82-.87-1.74-.87-2.16-.92C15.6 4 12 4 12 4h-.01s-3.6 0-6.58.12c-.42.05-1.34.05-2.16.92-.65.66-.86 2.16-.86 2.16S2.2 9 2.2 10.75v1.48C2.2 14 2.4 15.75 2.4 15.75s.21 1.5.86 2.16c.82.87 1.9.84 2.38.94C7.4 19 12 19 12 19s3.6 0 6.58-.13c.42-.05 1.34-.05 2.16-.92.65-.66.86-2.16.86-2.16s.2-1.75.2-3.5v-1.48c0-1.75-.2-3.6-.2-3.6zM9.9 14.2V8.9l5.4 2.66-5.4 2.64z"/></symbol>
+    </svg>
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="nav-brand" href="./index.html" aria-label="Industrial Certified Training home">
+                <img src="images/home/footer-logo.webp" alt="Industrial Certified Training" width="108" height="100">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
+                <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
+            </button>
+            <nav class="nav-links" id="navbarNav" aria-label="Primary">
+                <a href="./index.html">Home</a>
+                <a href="./about-us.html">About Us</a>
+                <a href="./our-brands.html">Our Brands</a>
+                <a href="./contact-us.html" aria-current="page">Contact Us</a>
+                <a href="#typeform-section" class="btn btn-primary nav-cta--mobile">Get Certified</a>
             </nav>
-            <section class="home-banner">
-                <div class="container py-4">
-                    <div class="row w-100 mx-0 align-items-center">
-                        <div class="col-lg-6">
-                            <h2 class="h2">Contact Us</h2>
-                            <h1 class="display-4">Your Path to Certified Excellence Starts Here</h1>
-                            <p class="lead">Have questions about our industry-certified training programs, course offerings, or enrollment?</p>
-                            <p class="lead">Whether you're enhancing individual skills or upskilling your workforce, we're here to provide the guidance you need.</p>
-                        </div>
-                        <div class="col-lg-6 text-center">
-                            <img src="images/contact-us/contact-us-banner-img.webp" alt="Contact Industrial Certified Training" class="img-fluid" fetchpriority="high">
-                        </div>
+            <a href="#typeform-section" class="btn btn-primary nav-cta">Get Certified</a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero hero--page">
+            <div class="container hero__grid">
+                <div>
+                    <p class="hero__eyebrow">Contact Us</p>
+                    <h1>Your Path to Certified Excellence Starts Here</h1>
+                    <p>Have questions about our industry-certified training programs, course offerings, or enrollment? Whether you're enhancing individual skills or upskilling your workforce, we're here to provide the guidance you need.</p>
+                    <div class="hero__actions">
+                        <a href="#typeform-section" class="btn btn-primary">Send Us a Message</a>
                     </div>
                 </div>
-            </section>
-        </div>
-    </section>
+                <div class="hero__media">
+                    <img src="images/contact-us/contact-us-banner-img.webp" alt="Industrial Certified Training support team" width="687" height="455" fetchpriority="high">
+                </div>
+            </div>
+        </section>
 
-    <section class="typeform" id="typeform-section">
-        <div data-tf-live="01JFSV156N80ZSB11TZV2MEFP5"></div>
-    </section>
+        <section class="section contact-cta" id="typeform-section">
+            <div class="container">
+                <h2 class="text-center">Send Us a Message</h2>
+                <p class="text-center lead max-w-prose" style="margin-inline:auto;">Fill out the form below and our team will get back to you about enrollment, course offerings, or general questions. You can also reach us instantly through live chat.</p>
+                <div class="contact-cta__panel">
+                    <div class="tf-placeholder" data-tf-placeholder>
+                        <p class="contact-cta__loading">Tell us about your training needs and we will follow up right away.</p>
+                        <button type="button" class="btn btn-primary" data-tf-trigger="01JFSV156N80ZSB11TZV2MEFP5">Open Contact Form</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="footer-section bg-dark text-white py-5">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row w-100 mx-0 px-md-4 footer-main-row mb-4">
-                        <div class="col-md-4 align-self-center">
-                            <img src="./images/home/footer-logo.webp" loading="lazy" alt="certified logo">
-                        </div>
-                        <div class="col-md-4 align-self-center">
-                            <div class="social-icons">
-                                <a href="https://www.linkedin.com/company/hazwoper-osha/" class="social-icon"><i class="fa-linkedin-in fab"></i></a>
-                                <a href="https://www.facebook.com/HazwoperOsha" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/hazwoper_osha_training/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="https://twitter.com/HazwoperOsha/" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-                                <a href="https://www.pinterest.com/HazwoperOsha/" class="social-icon"><i class="fa-pinterest-p fab"></i></a>
-                                <a href="https://www.youtube.com/@hazwoper-osha" class="social-icon"><i class="fa-youtube fab"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 align-self-center text-center">
-                            <a href="#typeform-section" class="btn btn-outline-light ms-2 d-none">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="offset-lg-3 col-md-6">
-                    <!-- <h5 class="mb-3">Quick Links</h5> -->
-                    <ul class="d-lg-flex justify-content-evenly list-unstyled">
-                        <li><a class="text-white" href="./index.html">Home</a></li>
-                        <li><a class="text-white" href="./about-us.html">About Us</a></li>
-                        <li><a class="text-white" href="./our-brands.html">Our Brands</a></li>
-                        <li><a class="text-white" href="./contact-us.html">Contact Us</a></li>
-                    </ul>
+            <div class="footer-top">
+                <img src="./images/home/footer-logo.webp" alt="Industrial Certified Training" width="108" height="100">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/hazwoper-osha/" class="social-icon" aria-label="Industrial Certified Training on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
+                    <a href="https://www.facebook.com/HazwoperOsha" class="social-icon" aria-label="Industrial Certified Training on Facebook"><svg class="icon" aria-hidden="true"><use href="#icon-facebook"></use></svg></a>
+                    <a href="https://www.instagram.com/hazwoper_osha_training/" class="social-icon" aria-label="Industrial Certified Training on Instagram"><svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
+                    <a href="https://twitter.com/HazwoperOsha/" class="social-icon" aria-label="Industrial Certified Training on X"><svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg></a>
+                    <a href="https://www.pinterest.com/HazwoperOsha/" class="social-icon" aria-label="Industrial Certified Training on Pinterest"><svg class="icon" aria-hidden="true"><use href="#icon-pinterest"></use></svg></a>
+                    <a href="https://www.youtube.com/@hazwoper-osha" class="social-icon" aria-label="Industrial Certified Training on YouTube"><svg class="icon" aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
                 </div>
             </div>
-            <hr>
-            <div class="text-center mt-4">
-                <div class="d-flex justify-content-center">
-                    <p class="mb-0 text-muted text-center">© <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
-                </div>
-            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="./index.html">Home</a>
+                <a href="./about-us.html">About Us</a>
+                <a href="./our-brands.html">Our Brands</a>
+                <a href="./contact-us.html">Contact Us</a>
+            </nav>
+            <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Load scripts at the end of the body with defer attribute -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="//embed.typeform.com/next/embed.js" defer></script>
+    <button type="button" class="chat-launcher" aria-label="Open live chat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-chat"></use></svg>
+    </button>
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/665db6f8981b6c564777f747/1hvf15eol';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+    <script src="./js/main.js" defer></script>
 </body>
 </html>
