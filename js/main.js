@@ -61,31 +61,64 @@
     requestAnimationFrame(step);
   }
 
-  /* Generic scroll-snap carousel controls */
+  /* Infinite-feeling scroll-snap carousel: clones of the real cards are placed
+     before and after the real set, so prev/next always animate a single step
+     in the direction clicked. Once that step lands on a clone, we silently
+     (no animation) snap to the identical-looking real card underneath it, so
+     looping never shows a long slide back to the start. */
   document.querySelectorAll('[data-carousel]').forEach(function (root) {
     var track = root.querySelector('[data-carousel-track]');
     var prev = root.querySelector('[data-carousel-prev]');
     var next = root.querySelector('[data-carousel-next]');
     if (!track) return;
-    var index = 0;
+
+    var originals = Array.prototype.slice.call(track.children);
+    var count = originals.length;
+    if (count < 2) return;
+
+    var beforeClones = document.createDocumentFragment();
+    var afterClones = document.createDocumentFragment();
+    originals.forEach(function (node) {
+      var b = node.cloneNode(true);
+      b.setAttribute('aria-hidden', 'true');
+      b.setAttribute('inert', '');
+      beforeClones.appendChild(b);
+      var a = node.cloneNode(true);
+      a.setAttribute('aria-hidden', 'true');
+      a.setAttribute('inert', '');
+      afterClones.appendChild(a);
+    });
+    track.insertBefore(beforeClones, track.firstChild);
+    track.appendChild(afterClones);
+
+    var index = count; // land on the first real card, past the prepended clone block
+
     function stepWidth() {
-      var card = track.querySelector(':scope > *');
+      var card = track.children[0];
       return card ? card.getBoundingClientRect().width + 16 : track.clientWidth;
     }
-    function maxIndex() {
-      var step = stepWidth();
-      var maxScroll = track.scrollWidth - track.clientWidth;
-      return step > 0 ? Math.max(0, Math.round(maxScroll / step)) : 0;
+    function setPosition(i, smooth) {
+      track.scrollTo({ left: i * stepWidth(), behavior: smooth ? 'smooth' : 'auto' });
     }
-    function goTo(i) {
-      var max = maxIndex();
-      if (i < 0) i = max;
-      else if (i > max) i = 0;
-      index = i;
-      track.scrollTo({ left: index * stepWidth(), behavior: 'smooth' });
+    function normalize() {
+      if (index >= count * 2) { index -= count; setPosition(index, false); }
+      else if (index < count) { index += count; setPosition(index, false); }
     }
-    if (prev) prev.addEventListener('click', function () { goTo(index - 1); });
-    if (next) next.addEventListener('click', function () { goTo(index + 1); });
+
+    setPosition(index, false);
+
+    if ('onscrollend' in window) {
+      track.addEventListener('scrollend', normalize);
+    } else {
+      var scrollTimer;
+      track.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(normalize, 150);
+      });
+    }
+
+    if (prev) prev.addEventListener('click', function () { index -= 1; setPosition(index, true); });
+    if (next) next.addEventListener('click', function () { index += 1; setPosition(index, true); });
   });
 
   /* Typeform embed: load only when the visitor opts in (facade pattern avoids
