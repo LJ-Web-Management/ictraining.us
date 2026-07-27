@@ -96,27 +96,4 @@
       }
     });
   });
-
-  /* Tawk.to live chat: load only when the visitor opts in via the chat launcher (facade pattern) */
-  var chatLauncher = document.querySelector('.chat-launcher');
-  if (chatLauncher) {
-    var chatLoaded = false;
-    var loadChat = function () {
-      if (chatLoaded) return;
-      chatLoaded = true;
-      window.Tawk_API = window.Tawk_API || {};
-      window.Tawk_LoadStart = new Date();
-      window.Tawk_API.onLoad = function () {
-        if (window.Tawk_API.maximize) window.Tawk_API.maximize();
-      };
-      var s1 = document.createElement('script');
-      var s0 = document.getElementsByTagName('script')[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/665db6f8981b6c564777f747/1hvf15eol';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    };
-    chatLauncher.addEventListener('click', loadChat);
-  }
 })();
