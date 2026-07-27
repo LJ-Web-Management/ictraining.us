@@ -71,25 +71,53 @@
     </script>
 </head>
 <body>
-    <div class="loader-container">
-        <svg width="100" height="100" viewBox="0 0 100 100">
-        <!-- Outer rotating circle -->
-        <circle class="circle outer" cx="50" cy="50" r="45" />
-         
-        <!-- Inner rotating circle -->
-        <circle class="circle inner" cx="50" cy="50" r="25" />
-        
-        <!-- Pulsing dots -->
-        <circle class="dots" cx="50" cy="5" r="3" />
-        <circle class="dots" cx="95" cy="50" r="3" />
-        <circle class="dots" cx="50" cy="95" r="3" />
-        <circle class="dots" cx="5" cy="50" r="3" />
-        </svg>
-      </div>
-    <div class="progress" id="progress-bar">
-        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="skeleton-loader" id="skeleton-loader">
+        <div class="skeleton-nav">
+            <div class="skeleton-block skeleton-logo"></div>
+            <div class="skeleton-nav-links">
+                <div class="skeleton-block skeleton-nav-link"></div>
+                <div class="skeleton-block skeleton-nav-link"></div>
+                <div class="skeleton-block skeleton-nav-link"></div>
+                <div class="skeleton-block skeleton-nav-link"></div>
+            </div>
+        </div>
+        <div class="skeleton-hero">
+            <div class="skeleton-hero-text">
+                <div class="skeleton-block skeleton-heading-line skeleton-w-90"></div>
+                <div class="skeleton-block skeleton-heading-line skeleton-w-75"></div>
+                <div class="skeleton-block skeleton-line skeleton-w-100"></div>
+                <div class="skeleton-block skeleton-line skeleton-w-90"></div>
+                <div class="skeleton-block skeleton-line skeleton-w-60"></div>
+                <div class="skeleton-block skeleton-button"></div>
+            </div>
+            <div class="skeleton-block skeleton-hero-image"></div>
+        </div>
     </div>
-    
+    <script>
+    (function () {
+        var el = document.getElementById('skeleton-loader');
+        if (!el) return;
+        var shown = false;
+        var showTimer = setTimeout(function () {
+            shown = true;
+            el.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+        }, 200);
+        function hide() {
+            clearTimeout(showTimer);
+            if (shown) {
+                el.style.opacity = '0';
+                document.body.style.overflow = '';
+                setTimeout(function () { el.style.display = 'none'; }, 250);
+            } else {
+                el.style.display = 'none';
+            }
+        }
+        window.addEventListener('load', hide);
+        setTimeout(hide, 4000);
+    })();
+    </script>
+
     <section class="nav-banner">
         <div class="home-banner-bg">
             <nav class="navbar navbar-expand-lg bg-transparent">

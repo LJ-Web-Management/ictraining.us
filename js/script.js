@@ -37,29 +37,6 @@ $(document).ready(function() {
         });
     }
 
-    let $loader = $('.loader-container');
-    let $progressBar = $('.progress-bar');
-    let width = 0;
-
-    // Show loader and progress bar
-    $loader.css('display', 'flex');
-    $progressBar.parent().show();
-    $('body').css('overflow', 'hidden');
-
-    // Start interval to update progress bar
-    let interval = setInterval(function() {
-        if (width >= 100) {
-            clearInterval(interval);
-            // Hide loader and progress bar
-            $loader.fadeOut(500);
-            $progressBar.parent().fadeOut(500);
-            $('body').css('overflow', '');
-        } else {
-            width += 5; // Increment width
-            $progressBar.css('width', width + '%').attr('aria-valuenow', width);
-        }
-    }, 50);
-
     const current_year = new Date().getFullYear();
     console.log({current_year});
     $('#current_year').html(current_year)
