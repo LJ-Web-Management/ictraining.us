@@ -67,20 +67,25 @@
     var prev = root.querySelector('[data-carousel-prev]');
     var next = root.querySelector('[data-carousel-next]');
     if (!track) return;
-    function cardWidth() {
+    var index = 0;
+    function stepWidth() {
       var card = track.querySelector(':scope > *');
       return card ? card.getBoundingClientRect().width + 16 : track.clientWidth;
     }
-    function atStart() { return track.scrollLeft <= 1; }
-    function atEnd() { return track.scrollLeft + track.clientWidth >= track.scrollWidth - 1; }
-    if (prev) prev.addEventListener('click', function () {
-      if (atStart()) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-      else track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
-    });
-    if (next) next.addEventListener('click', function () {
-      if (atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' });
-      else track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-    });
+    function maxIndex() {
+      var step = stepWidth();
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      return step > 0 ? Math.max(0, Math.round(maxScroll / step)) : 0;
+    }
+    function goTo(i) {
+      var max = maxIndex();
+      if (i < 0) i = max;
+      else if (i > max) i = 0;
+      index = i;
+      track.scrollTo({ left: index * stepWidth(), behavior: 'smooth' });
+    }
+    if (prev) prev.addEventListener('click', function () { goTo(index - 1); });
+    if (next) next.addEventListener('click', function () { goTo(index + 1); });
   });
 
   /* Typeform embed: load only when the visitor opts in (facade pattern avoids
