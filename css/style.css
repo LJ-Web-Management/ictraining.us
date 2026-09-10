@@ -274,7 +274,7 @@ p { margin: 0 0 var(--space-3); color: var(--color-text-secondary); }
   background: linear-gradient(120deg, var(--color-navy) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white); border-radius: var(--radius-lg); overflow: hidden;
 }
-.work-with__grid { display: grid; gap: var(--space-5); align-items: center; padding: var(--space-6) var(--space-5) var(--space-4); }
+.work-with__grid { display: grid; gap: var(--space-5); align-items: center; padding: var(--space-6) var(--space-5) 0; }
 @media (min-width: 992px) { .work-with__grid { grid-template-columns: 1fr 1fr; padding: var(--space-7) var(--space-6); } }
 .work-with h2 { color: var(--color-white); }
 .work-with p { color: rgba(255,255,255,0.82); }
@@ -366,12 +366,12 @@ p { margin: 0 0 var(--space-3); color: var(--color-text-secondary); }
 .story-row h2 { text-transform: uppercase; font-size: 1.5rem; }
 
 /* ===================== Brand lockups ===================== */
-.brand-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(3, 1fr); margin-top: var(--space-5); }
-@media (max-width: 767.98px) { .brand-grid { grid-template-columns: 1fr; } }
+.brand-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-top: var(--space-5); }
 .brand-card {
   display: flex; flex-direction: column; align-items: center; gap: var(--space-3);
   background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md);
   padding: var(--space-5); text-align: center; transition: transform var(--transition), box-shadow var(--transition);
+  flex: 1 1 260px; max-width: 300px;
 }
 .brand-card:hover, .brand-card:focus-visible { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .brand-card img { height: 56px; width: auto; object-fit: contain; }
