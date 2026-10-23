@@ -26,9 +26,8 @@
     <meta property="og:locale" content="en_US">
 
     <link rel="icon" href="./images/home/footer-logo.webp" type="image/webp">
-    <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/syne.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/home/home-banner.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/home/proven-results.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
     {
@@ -90,6 +89,7 @@
         <div class="container nav">
             <a class="nav-brand" href="./index.html" aria-label="Industrial Certified Training home">
                 <img src="images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <span class="nav-brand__text">Industrial<br>Certified Training</span>
             </a>
             <button class="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -107,24 +107,24 @@
     </header>
 
     <main id="main">
-        <section class="hero hero--split">
-            <div class="container hero__grid">
-                <div>
-                    <span class="hero__eyebrow"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg> 25+ years of certified training</span>
-                    <h1>Your Gateway to <span>Globally Recognized Training Excellence</span></h1>
-                    <p>Industrial Certified Training, LLC is the umbrella brand behind a growing family of industry-certified training providers. We build and oversee each brand in our portfolio so individuals and organizations can find the right training solution, delivering the skills, knowledge, and certifications you need to thrive in an ever-evolving global landscape.</p>
+        <section class="hero">
+            <div class="hero__bg">
+                <img src="images/home/proven-results.webp" alt="" width="700" height="466" fetchpriority="high">
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <span class="hero__tag">OSHA &middot; HAZWOPER &middot; ELDT &middot; Certified Training</span>
+                    <h1>Built for the <span>toughest</span> jobs on earth.</h1>
+                    <p>Industrial Certified Training, LLC is the parent company behind a family of industry-certified training brands, delivering the skills, knowledge, and certifications crews, drivers, and responders need to work safely and stay compliant.</p>
                     <div class="hero__actions">
                         <a href="./our-brands.html" class="btn btn-primary">Explore Our Brands</a>
-                        <a href="#industries" class="btn btn-outline">Explore Industries</a>
+                        <a href="#industries" class="btn btn-outline">Industries We Serve</a>
                     </div>
-                </div>
-                <div class="hero__media">
-                    <img src="images/home/home-banner.webp" alt="Industrial safety training professional reviewing certification materials" width="689" height="488" fetchpriority="high">
                 </div>
             </div>
         </section>
 
-        <section class="stats section">
+        <section class="stats" aria-label="Company highlights">
             <div class="container stats__grid">
                 <div>
                     <div class="stats__number"><span class="counter" data-target="25">0</span>+</div>
@@ -136,14 +136,14 @@
                 </div>
                 <div>
                     <div class="stats__number"><span class="counter" data-target="89">0</span>K+</div>
-                    <p class="stats__label">Satisfied Businesses & Counting</p>
+                    <p class="stats__label">Satisfied Businesses</p>
                 </div>
             </div>
         </section>
 
         <section class="trusted">
-            <div class="container">
-                <h2 class="text-center">Join the Trusted Network</h2>
+            <div class="container trusted__inner">
+                <h2 class="trusted__title">Join the Trusted Network</h2>
                 <div class="trusted__grid">
                     <img src="images/home/us-army-logo.webp" alt="U.S. Army" width="400" height="200" loading="lazy">
                     <img src="images/home/fbi-logo.webp" alt="Federal Bureau of Investigation" width="400" height="200" loading="lazy">
@@ -155,10 +155,15 @@
             </div>
         </section>
 
-        <section class="section services-we-offer">
+        <section class="section section--alt services-we-offer">
             <div class="container">
-                <p class="section-eyebrow text-center">How we help</p>
-                <h2 class="text-center">Solutions built for your industry</h2>
+                <div class="section-head">
+                    <div>
+                        <p class="section-eyebrow">How we help</p>
+                        <h2>Solutions built for your industry</h2>
+                    </div>
+                    <p>One parent company, one standard. Every brand in our portfolio is built to get your people trained, certified, and back on the job.</p>
+                </div>
                 <div class="services__grid">
                     <article class="service-card">
                         <img src="./images/home/tailored-learning-solution-img.webp" alt="" width="397" height="257" loading="lazy">
@@ -196,14 +201,15 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section--alt section--flush-top">
             <div class="container">
                 <div class="work-with">
                     <div class="work-with__grid">
                         <div>
+                            <p class="section-eyebrow">Every workplace</p>
                             <h2>We work with all types of workplaces</h2>
                             <p>Through our family of certified training brands, we connect individuals and organizations with training that fits real-world job sites, from small crews to enterprise workforces.</p>
-                            <a href="./our-brands.html" class="btn btn-outline">Find Your Brand</a>
+                            <a href="./our-brands.html" class="btn btn-primary">Find Your Brand <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
                         </div>
                         <div class="work-with__media">
                             <img src="./images/home/we-work-with-man-img.webp" alt="Worker equipped for industrial safety compliance" width="375" height="556" loading="lazy">
@@ -213,65 +219,56 @@
             </div>
         </section>
 
-        <section class="section industries" id="industries">
-            <div class="container text-center">
-                <h2>Customized Training for Your Industry</h2>
-                <p class="lead max-w-prose" style="margin-inline:auto;">Our portfolio of certified training brands covers a wide range of industries, ensuring compliance, safety, and efficiency.</p>
+        <section class="section section--char industries" id="industries">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="section-eyebrow">Industries</p>
+                        <h2>Every industry.<br>Every job site.</h2>
+                    </div>
+                    <p>Our portfolio of certified training brands covers a wide range of industries, ensuring compliance, safety, and efficiency.</p>
+                </div>
                 <div class="industries__grid">
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
-                        <img src="./images/home/ct-construction.webp" alt="Construction industry training" width="290" height="323" loading="lazy">
-                        <p class="industry-card__label">Construction</p>
-                        <div class="industry-card__overlay"><p>Build safer worksites with comprehensive safety and compliance training.</p></div>
-                        </div>
-                    </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
-                        <img src="images/home/ct-maritime.webp" alt="Maritime industry training" width="288" height="323" loading="lazy">
-                        <p class="industry-card__label">Maritime</p>
-                        <div class="industry-card__overlay"><p>Navigate safety at sea with specialized maritime industry training.</p></div>
-                        </div>
-                    </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
-                        <img src="images/home/ct-radiation.webp" alt="Radiation safety training" width="297" height="323" loading="lazy">
-                        <p class="industry-card__label">Radiation</p>
-                        <div class="industry-card__overlay"><p>Ensure radiation safety with expert-led certification courses.</p></div>
-                        </div>
-                    </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
-                        <img src="images/home/ct-heathcare.webp" alt="Healthcare industry training" width="297" height="323" loading="lazy">
-                        <p class="industry-card__label">Healthcare</p>
-                        <div class="industry-card__overlay"><p>Prioritize patient and worker safety through tailored healthcare training programs.</p></div>
-                        </div>
-                    </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
+                    <div class="industry-card">
                         <img src="images/home/ct-oil-and-gas.webp" alt="Oil and gas industry training" width="397" height="265" loading="lazy">
                         <p class="industry-card__label">Oil &amp; Gas</p>
-                        <div class="industry-card__overlay"><p>Power safe operations with industry-specific oil and gas safety training.</p></div>
-                        </div>
+                        <div class="industry-card__overlay"><strong>Oil &amp; Gas</strong><p>Power safe operations with industry-specific oil and gas safety training.</p></div>
                     </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
+                    <div class="industry-card">
+                        <img src="./images/home/ct-construction.webp" alt="Construction industry training" width="290" height="323" loading="lazy">
+                        <p class="industry-card__label">Construction</p>
+                        <div class="industry-card__overlay"><strong>Construction</strong><p>Build safer worksites with comprehensive safety and compliance training.</p></div>
+                    </div>
+                    <div class="industry-card">
+                        <img src="images/home/ct-maritime.webp" alt="Maritime industry training" width="288" height="323" loading="lazy">
+                        <p class="industry-card__label">Maritime</p>
+                        <div class="industry-card__overlay"><strong>Maritime</strong><p>Navigate safety at sea with specialized maritime industry training.</p></div>
+                    </div>
+                    <div class="industry-card">
+                        <img src="images/home/ct-radiation.webp" alt="Radiation safety training" width="297" height="323" loading="lazy">
+                        <p class="industry-card__label">Radiation</p>
+                        <div class="industry-card__overlay"><strong>Radiation</strong><p>Ensure radiation safety with expert-led certification courses.</p></div>
+                    </div>
+                    <div class="industry-card">
+                        <img src="images/home/ct-heathcare.webp" alt="Healthcare industry training" width="297" height="323" loading="lazy">
+                        <p class="industry-card__label">Healthcare</p>
+                        <div class="industry-card__overlay"><strong>Healthcare</strong><p>Prioritize patient and worker safety through tailored healthcare training programs.</p></div>
+                    </div>
+                    <div class="industry-card">
                         <img src="images/home/ct-general-industry.webp" alt="General industry training" width="397" height="265" loading="lazy">
                         <p class="industry-card__label">General Industry</p>
-                        <div class="industry-card__overlay"><p>Strengthen workplace safety across diverse industries with essential training.</p></div>
-                        </div>
+                        <div class="industry-card__overlay"><strong>General Industry</strong><p>Strengthen workplace safety across diverse industries with essential training.</p></div>
                     </div>
-                    <div class="industry-card-shadow">
-                        <div class="industry-card">
+                    <div class="industry-card">
                         <img src="images/home/ct-hospitality.webp" alt="Hospitality industry training" width="397" height="265" loading="lazy">
                         <p class="industry-card__label">Hospitality (Including Restaurants)</p>
-                        <div class="industry-card__overlay"><p>Elevate guest experiences by ensuring staff safety and compliance in hospitality.</p></div>
-                        </div>
+                        <div class="industry-card__overlay"><strong>Hospitality</strong><p>Elevate guest experiences by ensuring staff safety and compliance in hospitality.</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section--alt">
             <div class="container testimonials__layout" data-carousel>
                 <div class="testimonials__intro">
                     <p class="section-eyebrow">Testimonials</p>
@@ -425,7 +422,8 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <img src="./images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <img src="./images/home/footer-logo.webp" alt="" width="900" height="834" loading="lazy">
+                <span class="footer-brand__text">Industrial<br>Certified Training</span>
             </div>
             <div class="footer-content">
                 <div class="footer-top">
@@ -440,8 +438,8 @@
                     <a href="./our-brands.html">Our Brands</a>
                     <a href="./contact-us.html">Contact Us</a>
                 </nav>
-                <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
             </div>
+            <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
         </div>
     </footer>
 

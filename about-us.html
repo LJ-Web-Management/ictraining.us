@@ -26,9 +26,8 @@
     <meta property="og:locale" content="en_US">
 
     <link rel="icon" href="./images/home/footer-logo.webp" type="image/webp">
-    <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/syne.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/about-us/about-us-banner-img.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/home/ct-general-industry.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
     {
@@ -85,6 +84,7 @@
         <div class="container nav">
             <a class="nav-brand" href="./index.html" aria-label="Industrial Certified Training home">
                 <img src="images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <span class="nav-brand__text">Industrial<br>Certified Training</span>
             </a>
             <button class="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -103,14 +103,14 @@
 
     <main id="main">
         <section class="hero hero--page">
-            <div class="container hero__grid">
-                <div>
-                    <p class="hero__eyebrow">About Us</p>
+            <div class="hero__bg">
+                <img src="images/home/ct-general-industry.webp" alt="" width="397" height="265" fetchpriority="high">
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <span class="hero__tag">About Us</span>
                     <h1>The Parent Company Behind a Family of Certified Training Brands</h1>
                     <p>Industrial Certified Training, LLC is the umbrella company behind a portfolio of specialized training brands, including <a href="./our-brands.html">HAZWOPER-OSHA, ELDT Training, and OSHA certification programs</a>. We build and oversee the standards, quality, and growth of each brand so individuals and businesses can find the right certified training to thrive in competitive industries.</p>
-                </div>
-                <div class="hero__media">
-                    <img src="images/about-us/about-us-banner-img.webp" alt="Industrial Certified Training team collaborating" width="687" height="455" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -161,8 +161,8 @@
         </section>
 
         <section class="trusted">
-            <div class="container">
-                <h2 class="text-center">Join the Trusted Network</h2>
+            <div class="container trusted__inner">
+                <h2 class="trusted__title">Join the Trusted Network</h2>
                 <div class="trusted__grid">
                     <img src="images/home/us-army-logo.webp" alt="U.S. Army" width="400" height="200" loading="lazy">
                     <img src="images/home/fbi-logo.webp" alt="Federal Bureau of Investigation" width="400" height="200" loading="lazy">
@@ -191,7 +191,8 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <img src="./images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <img src="./images/home/footer-logo.webp" alt="" width="900" height="834" loading="lazy">
+                <span class="footer-brand__text">Industrial<br>Certified Training</span>
             </div>
             <div class="footer-content">
                 <div class="footer-top">
@@ -206,8 +207,8 @@
                     <a href="./our-brands.html">Our Brands</a>
                     <a href="./contact-us.html">Contact Us</a>
                 </nav>
-                <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
             </div>
+            <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
         </div>
     </footer>
 

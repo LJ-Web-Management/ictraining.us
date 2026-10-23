@@ -26,9 +26,8 @@
     <meta property="og:locale" content="en_US">
 
     <link rel="icon" href="./images/home/footer-logo.webp" type="image/webp">
-    <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/syne.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/contact-us/contact-us-banner-img.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/home/ct-construction.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
     {
@@ -85,6 +84,7 @@
         <div class="container nav">
             <a class="nav-brand" href="./index.html" aria-label="Industrial Certified Training home">
                 <img src="images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <span class="nav-brand__text">Industrial<br>Certified Training</span>
             </a>
             <button class="nav-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
@@ -103,17 +103,17 @@
 
     <main id="main">
         <section class="hero hero--page">
-            <div class="container hero__grid">
-                <div>
-                    <p class="hero__eyebrow">Contact Us</p>
+            <div class="hero__bg">
+                <img src="images/home/ct-construction.webp" alt="" width="290" height="323" fetchpriority="high">
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <span class="hero__tag">Contact Us</span>
                     <h1>Your Path to Certified Excellence Starts Here</h1>
                     <p>Have questions about the certified training brands in our portfolio, course offerings, or enrollment? Whether you're enhancing individual skills or upskilling your workforce, we're here to point you to the right program.</p>
                     <div class="hero__actions">
                         <a href="#typeform-section" class="btn btn-primary">Send Us a Message</a>
                     </div>
-                </div>
-                <div class="hero__media">
-                    <img src="images/contact-us/contact-us-banner-img.webp" alt="Industrial Certified Training support team" width="687" height="455" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -135,7 +135,8 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <img src="./images/home/footer-logo.webp" alt="Industrial Certified Training" width="900" height="834">
+                <img src="./images/home/footer-logo.webp" alt="" width="900" height="834" loading="lazy">
+                <span class="footer-brand__text">Industrial<br>Certified Training</span>
             </div>
             <div class="footer-content">
                 <div class="footer-top">
@@ -150,8 +151,8 @@
                     <a href="./our-brands.html">Our Brands</a>
                     <a href="./contact-us.html">Contact Us</a>
                 </nav>
-                <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
             </div>
+            <p class="footer-bottom">&copy; <span id="current_year"></span> Industrial Certified Training, LLC. All Rights Reserved.</p>
         </div>
     </footer>
 

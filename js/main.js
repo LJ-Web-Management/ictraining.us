@@ -54,9 +54,9 @@
       var progress = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
       var value = target * eased;
-      el.textContent = isFloat ? value.toFixed(1) : Math.floor(value);
+      el.textContent = isFloat ? value.toFixed(1) : Math.floor(value).toLocaleString('en-US');
       if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = isFloat ? target.toFixed(1) : target;
+      else el.textContent = isFloat ? target.toFixed(1) : target.toLocaleString('en-US');
     }
     requestAnimationFrame(step);
   }
