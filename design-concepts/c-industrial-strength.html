@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Concept C — Industrial Strength</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+:root{--black:#111214;--char:#1c1e22;--yellow:#ffc20e;--muted:#9aa0a8;--line:#2c2f35}
+body{font-family:Inter,sans-serif;color:#fff;background:var(--black)}
+header{position:absolute;top:0;left:0;right:0;z-index:2}
+header .wrap{display:flex;align-items:center;height:96px;gap:48px}
+.brand{display:flex;gap:14px;align-items:center;font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
+.brand img{width:56px;background:#fff;border-radius:50%;padding:3px}
+nav{display:flex;gap:36px;flex:1;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn{display:inline-block;font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:18px 30px}
+.btn-y{background:var(--yellow);color:#111}
+.btn-g{border:2px solid #fff}
+.hero{position:relative;height:760px;background:url(../images/home/ct-construction.webp) center 35%/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.7),rgba(17,18,20,.55) 50%,rgba(17,18,20,1))}
+.hero .wrap{position:relative;padding-top:230px}
+.tag{display:inline-block;background:var(--yellow);color:#111;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;margin-bottom:28px}
+.hero h1{font-family:'Inter Display';font-weight:900;font-size:96px;line-height:.92;letter-spacing:-.03em;text-transform:uppercase;max-width:960px}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:20px;line-height:1.55;color:#d3d6db;max-width:600px;margin:30px 0 40px}
+.hero .actions{display:flex;gap:16px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);border-top:4px solid var(--yellow)}
+.stat{padding:40px 0}
+.stat b{font-family:'Inter Display';font-weight:900;font-size:60px;letter-spacing:-.02em}
+.stat span{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+.ind{padding:100px 0;background:var(--char)}
+.ind h2{font-family:'Inter Display';font-weight:900;font-size:56px;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.ind .top{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}
+.ind .top p{color:var(--muted);max-width:420px;font-size:17px;line-height:1.6}
+.tiles{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:8px}
+.tile{position:relative;background-size:cover;background-position:center}
+.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85))}
+.tile h3{position:absolute;left:24px;bottom:22px;z-index:1;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.04em}
+.tile h3:before{content:"";display:block;width:36px;height:4px;background:var(--yellow);margin-bottom:12px}
+.t1{grid-row:span 2}
+.trust{padding:56px 0;border-top:1px solid var(--line)}
+.trust .wrap{display:flex;justify-content:space-between;align-items:center}
+.trust img{height:50px;width:auto;filter:grayscale(1) invert(1) brightness(1.4);opacity:.7}
+.trust p{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--yellow)}
+</style></head><body>
+<header><div class="wrap"><a class="brand"><img src="../images/home/footer-logo.webp">Industrial<br>Certified Training</a>
+<nav><span>Brands</span><span>Industries</span><span>Company</span><span>Contact</span></nav><a class="btn btn-y">Get Certified</a></div></header>
+<section class="hero"><div class="wrap">
+<span class="tag">Since 2008 · OSHA · HAZWOPER · ELDT</span>
+<h1>Built for the <span>toughest</span> jobs on earth.</h1>
+<p>Industry-certified safety and compliance training for the crews, drivers and responders who keep the country running.</p>
+<div class="actions"><a class="btn btn-y">Explore Our Brands</a><a class="btn btn-g">Industries We Serve</a></div>
+</div></section>
+<div class="stats"><div class="wrap">
+<div class="stat"><b>25+</b><span>Years in the field</span></div>
+<div class="stat"><b>1,000+</b><span>Certified courses</span></div>
+<div class="stat"><b>89K+</b><span>Businesses served</span></div>
+<div class="stat"><b>24/7</b><span>Online access</span></div></div></div>
+<section class="ind"><div class="wrap">
+<div class="top"><h2>Every industry.<br>Every job site.</h2><p>From refineries to hospital floors, our brands deliver the certifications your workforce needs to work safely and stay compliant.</p></div>
+<div class="tiles">
+<div class="tile t1" style="background-image:url(../images/home/ct-oil-and-gas.webp)"><h3>Oil &amp; Gas</h3></div>
+<div class="tile" style="background-image:url(../images/home/ct-maritime.webp)"><h3>Maritime</h3></div>
+<div class="tile" style="background-image:url(../images/home/ct-radiation.webp)"><h3>Radiation</h3></div>
+<div class="tile" style="background-image:url(../images/home/ct-heathcare.webp)"><h3>Healthcare</h3></div>
+<div class="tile" style="background-image:url(../images/home/ct-general-industry.webp)"><h3>General Industry</h3></div>
+</div></div></section>
+<div class="trust"><div class="wrap"><p>Trusted by</p>
+<img src="../images/home/us-army-logo.webp"><img src="../images/home/fbi-logo.webp"><img src="../images/home/nasa-logo.svg"><img src="../images/home/us-sailors-logo.svg"><img src="../images/home/pfizer-logo.svg"></div></div>
+</body></html>

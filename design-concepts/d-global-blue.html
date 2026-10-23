@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Concept D — Global Blue</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+:root{--blue:#0b3d91;--blue2:#0f62fe;--sky:#e8f0ff;--ink:#161616;--muted:#525866;--line:#e0e4ea;--bg:#f4f6f9;--teal:#00a6a0}
+body{font-family:Inter,sans-serif;color:var(--ink);background:#fff}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:76px;gap:44px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:17px;color:var(--blue)}
+.brand img{width:46px}
+nav{display:flex;gap:32px;font-size:15px;color:#333;flex:1}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 24px;border-radius:6px}
+.btn-p{background:var(--blue2);color:#fff}
+.btn-s{background:#fff;color:var(--blue);border:1px solid #c4d3ee}
+.hero{background:linear-gradient(180deg,#f2f6fd,#fff);padding:72px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--sky);color:var(--blue);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;margin-bottom:24px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);display:block}
+.hero h1{font-family:'Inter Display';font-size:60px;line-height:1.06;letter-spacing:-.025em;font-weight:700;color:#0b1b3f}
+.hero h1 span{color:var(--blue2)}
+.hero p{font-size:18px;line-height:1.65;color:var(--muted);margin:22px 0 34px;max-width:520px}
+.hero .actions{display:flex;gap:12px}
+.media{position:relative}
+.media img{border-radius:16px;height:470px;width:100%;object-fit:cover}
+.float{position:absolute;background:#fff;border-radius:12px;box-shadow:0 20px 50px rgba(11,27,63,.16);padding:18px 22px}
+.f1{left:-40px;bottom:40px;display:flex;gap:14px;align-items:center}
+.f1 b{font-size:30px;color:var(--blue);font-family:'Inter Display'}
+.f1 span{font-size:13px;color:var(--muted);line-height:1.4}
+.f2{right:-20px;top:30px;font-size:13px;font-weight:600;color:#0b1b3f;display:flex;gap:10px;align-items:center}
+.f2 i{width:28px;height:28px;border-radius:50%;background:#e0f7f6;color:var(--teal);display:grid;place-items:center;font-style:normal}
+.logos{padding:56px 0 64px}
+.logos p{text-align:center;font-size:14px;color:var(--muted);margin-bottom:26px}
+.logos .row{display:flex;justify-content:space-between;align-items:center;padding:0 60px}
+.logos img{height:48px;width:auto;filter:grayscale(1);opacity:.6}
+.brands{background:var(--bg);padding:96px 0}
+.brands h2{font-family:'Inter Display';font-size:42px;letter-spacing:-.02em;text-align:center;color:#0b1b3f}
+.brands .sub{text-align:center;color:var(--muted);font-size:18px;margin:14px 0 52px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.ic{width:48px;height:48px;border-radius:10px;background:var(--sky);color:var(--blue2);display:grid;place-items:center;font-weight:800;font-size:18px;margin-bottom:22px}
+.bc h3{font-size:19px;margin-bottom:10px;color:#0b1b3f}
+.bc p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:22px}
+.bc a{color:var(--blue2);font-weight:600;font-size:14px}
+.band{background:var(--blue);color:#fff;padding:64px 0}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.band b{font-family:'Inter Display';font-size:48px;display:block}
+.band span{color:#b9c9ec;font-size:15px}
+</style></head><body>
+<header><div class="wrap"><a class="brand"><img src="../images/home/footer-logo.webp">Industrial Certified Training</a>
+<nav><span>Solutions ▾</span><span>Brands ▾</span><span>Industries ▾</span><span>Resources</span><span>About</span></nav>
+<span style="font-size:15px;color:#333">Sign in</span><a class="btn btn-p">Request a Consultation</a></div></header>
+<section class="hero"><div class="wrap">
+<div><span class="pill"><i></i>Trusted by 89,000+ organizations</span>
+<h1>Certified training for a <span>safer, compliant</span> workforce.</h1>
+<p>One trusted parent company. A portfolio of industry-certified brands covering OSHA, HAZWOPER, ELDT and more — delivered online, at scale.</p>
+<div class="actions"><a class="btn btn-p">Explore Our Brands →</a><a class="btn btn-s">Talk to an Expert</a></div></div>
+<div class="media"><img src="../images/home/ct-construction.webp">
+<div class="float f1"><b>1,000+</b><span>Certification<br>courses</span></div>
+<div class="float f2"><i>✓</i>OSHA-aligned curriculum</div></div>
+</div>
+<div class="wrap logos"><p>Trusted by teams at leading organizations and agencies</p><div class="row">
+<img src="../images/home/us-army-logo.webp"><img src="../images/home/fbi-logo.webp"><img src="../images/home/nasa-logo.svg"><img src="../images/home/us-sailors-logo.svg"><img src="../images/home/pfizer-logo.svg"></div></div>
+</section>
+<section class="brands"><div class="wrap">
+<h2>One portfolio. Every certification you need.</h2><p class="sub">Each brand is held to the same rigorous standards of quality and compliance.</p>
+<div class="g">
+<div class="bc"><div class="ic">HZ</div><h3>HAZWOPER-OSHA</h3><p>40, 24 and 8-hour HAZWOPER and OSHA outreach training.</p><a>Visit site →</a></div>
+<div class="bc"><div class="ic">EL</div><h3>ELDT Training</h3><p>FMCSA-registered Entry-Level Driver Training for CDL.</p><a>Visit site →</a></div>
+<div class="bc"><div class="ic">OS</div><h3>OSHA SCORM</h3><p>Plug-and-play OSHA content for your LMS.</p><a>Visit site →</a></div>
+<div class="bc"><div class="ic">AI</div><h3>AI Skills</h3><p>AI literacy and upskilling for modern teams.</p><a>Visit site →</a></div>
+</div></div></section>
+<section class="band"><div class="wrap">
+<div><b>25+</b><span>Years of experience</span></div><div><b>1,000+</b><span>Courses</span></div><div><b>89K+</b><span>Businesses served</span></div><div><b>7</b><span>Industries</span></div></div></section>
+</body></html>
