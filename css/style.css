@@ -397,9 +397,20 @@ p { margin: 0 0 var(--space-3); color: var(--color-text-secondary); }
 .story-row h2 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem); }
 
 /* ===================== Brand lockups ===================== */
-.brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
-@media (max-width: 991.98px) { .brand-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 575.98px) { .brand-grid { grid-template-columns: 1fr; } }
+/* Six-column track: the first three cards take two columns each and the
+   last two take three, so five brands fill two complete rows (3 + 2). */
+.brand-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
+.brand-grid > * { grid-column: span 2; }
+.brand-grid > :nth-child(4), .brand-grid > :nth-child(5) { grid-column: span 3; }
+@media (max-width: 991.98px) {
+  .brand-grid { grid-template-columns: repeat(2, 1fr); }
+  .brand-grid > *, .brand-grid > :nth-child(4) { grid-column: span 1; }
+  .brand-grid > :nth-child(5) { grid-column: 1 / -1; }
+}
+@media (max-width: 575.98px) {
+  .brand-grid { grid-template-columns: 1fr; }
+  .brand-grid > :nth-child(n) { grid-column: auto; }
+}
 .brand-card {
   display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--space-4);
   background: var(--color-white); border-bottom: 4px solid transparent;

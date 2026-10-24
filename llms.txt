@@ -8,7 +8,7 @@ Industrial Certified Training LLC does not deliver training directly; it builds 
 
 - [Home](https://ictraining.us/): Overview of services, industries served, and company stats.
 - [About Us](https://ictraining.us/about-us.html): Company mission, vision, expertise, and culture.
-- [Our Brands](https://ictraining.us/our-brands.html): Portfolio of certification brands — HAZWOPER/OSHA (https://hazwoper-osha.com), Entry Level Driver Training / ELDT (https://eldttraining.us), and OSHA certification (https://oshascorm.org).
+- [Our Brands](https://ictraining.us/our-brands.html): Portfolio of certification brands — HAZWOPER/OSHA (https://hazwoper-osha.com), Entry Level Driver Training / ELDT (https://eldttraining.us), OSHA certification (https://oshascorm.org), AI Skills (https://ai-skills.work), and Data Center Training (https://datacentertraining.us).
 - [Partnerships](https://ictraining.us/partnerships.html): Strategic partnerships, enterprise and government programs, investment inquiries, and acquisitions or brand partnerships.
 - [Contact Us](https://ictraining.us/contact-us.html): Enrollment and general inquiries.
 
