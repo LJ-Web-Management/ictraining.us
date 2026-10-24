@@ -446,3 +446,36 @@ p { margin: 0 0 var(--space-3); color: var(--color-text-secondary); }
 .max-w-prose { max-width: 640px; }
 .mx-auto { margin-inline: auto; }
 .stack { display: flex; flex-direction: column; }
+
+/* ===================== Partnerships ===================== */
+.contact-cta .section-eyebrow { color: var(--color-yellow); }
+.text-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-yellow); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid currentColor; padding-bottom: 0.2rem; }
+.text-link:hover, .text-link:focus-visible { color: var(--color-white); }
+.text-link .icon { width: 1.1em; height: 1.1em; }
+.contact-cta__note { max-width: 760px; margin: var(--space-4) auto 0; text-align: center; font-size: 0.8rem; color: var(--color-on-dark-muted); }
+
+.partner-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 991.98px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575.98px) { .partner-grid { grid-template-columns: 1fr; } }
+.partner-grid > * { min-width: 0; }
+.partner-card {
+  background: var(--color-white); padding: var(--space-5) var(--space-4); border-top: 4px solid var(--color-yellow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.partner-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.partner-card__num { display: block; font-family: var(--font-wordmark); font-size: 3rem; line-height: 1; color: var(--color-yellow-dark); margin-bottom: var(--space-3); }
+.partner-card__title { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: var(--space-3); }
+.partner-card p { margin: 0; font-size: 0.95rem; }
+
+.section--dark .stats__grid { margin-top: var(--space-2); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); grid-template-columns: repeat(3, 1fr); counter-reset: none; }
+@media (max-width: 767.98px) { .steps { grid-template-columns: 1fr; } }
+.steps > * { min-width: 0; }
+.step { border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
+.step__num {
+  display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px;
+  background: var(--color-black); color: var(--color-yellow); font-family: var(--font-wordmark); font-size: 1.8rem; line-height: 1; margin-bottom: var(--space-4);
+}
+.step__title { font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; }
+.step p { margin: 0; }
